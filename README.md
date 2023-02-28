@@ -117,7 +117,26 @@ gates to each word in the diagram.
 
 
 
-The algorithm for natural language generation was **Simulated Quantum Annealing** which is an optimization algorithm built on top of **Hill-Climbing Algorithm**
+### The algorithm for natural language generation was **Simulated Quantum Annealing** which is an optimization algorithm built on top of **Hill-Climbing Algorithm**
+
+### Hill Climbing Algorithm
+The Hill Climbing algorithm is a type of heuristic search algorithm used in artificial intelligence and optimization problems. It is a local search algorithm that tries to find the best solution by iteratively improving the current solution.
+
+The basic idea of the Hill Climbing algorithm is to start with an initial solution and then to repeatedly modify it by making small changes and selecting the best one at each iteration. The algorithm terminates when it reaches a local maximum, meaning that no further improvement is possible.
+
+**visualization of the algorithm**
+
+
+https://user-images.githubusercontent.com/68440833/221959527-5e97585a-7c89-4787-a9fc-f78eab8f38e2.mp4
+
+
+
+
+
+
+
+
+https://user-images.githubusercontent.com/68440833/221959889-6fb3e23c-39a6-455d-9679-4b6d6e8335cf.mp4
 
 
 
