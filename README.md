@@ -272,6 +272,23 @@ In this open-hackathon Project I have successfully implemented a Quantum Machine
 
 - I am glad I got to implement this instead, but **I am even more optimistic of the future of Quantum computing**. My next goal is implementing a Text2Image model that can run on a Quantum Computer and I cannot wait to see the unfolding potential of AI and Quantum Computing. **What A Time To Be Alive**
 
+**Thank QHack Organizers :), this was a an amazing event**
+
+
+
+## REFERENCES
+
+1. Quantum Natural Language Generation on Near-Term Devices: https://arxiv.org/pdf/2211.00727.pdf
+2.Bob Coecke, “Foundations for Near Term Quantum Natural
+Language Processing”, https://arxiv.org/abs/2012.03755
+3. Stephen Clark, “Something Old, Something New: Grammarbased CCG Parsing with Transformer Models”,
+https://arxiv.org/abs/2109.10044
+4.Imagen unprecedented photorealism × deep level of language understanding: https://imagen.research.google/
+5. Introducing ChatGPT : https://openai.com/blog/chatgpt
+6. An Introduction to Quantum Natural Language Processing by Srinjoy Ganguly :https://www.udemy.com/course/quantum-natural-language-processing-beginners/
+7. lambeq : https://cqcl.github.io/lambeq/
+8. https://medium.com/cambridge-quantum-computing/quantum-natural-language-processing-ii-6b6a44b319b2
+
 
 
 
