@@ -261,6 +261,9 @@ print("Final solution:", solution)
 print("Final energy:", energy)
 
 ```
+## DEMO RESULT(IMAGE)
+Here is an image of a generated sentence based about a topic
+![Screenshot (252)](https://user-images.githubusercontent.com/68440833/221987230-28c32014-8932-4f48-b438-84ece7f2d85a.png)
 
 
 
