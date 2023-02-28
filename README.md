@@ -272,7 +272,7 @@ In this open-hackathon Project I have successfully implemented a Quantum Machine
 
 - I am glad I got to implement this instead, but **I am even more optimistic of the future of Quantum computing**. My next goal is implementing a Text2Image model that can run on a Quantum Computer and I cannot wait to see the unfolding potential of AI and Quantum Computing. **What A Time To Be Alive**
 
-**Thank QHack Organizers :), this was a an amazing event**
+**Thank you QHack Organizers :), this was a an amazing event**
 
 
 
