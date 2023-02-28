@@ -59,6 +59,61 @@ One of the key advantages of DQT is that it provides a way to simplify complex q
 
 ![Screenshot (253)](https://user-images.githubusercontent.com/68440833/221954392-cb494e25-c732-47c3-bb2f-dabd2578a7e5.png)
 
+
+**Hill-climbing algorithm**
+```python 
+    import random
+
+def hill_climbing(start_state, goal_state, get_neighbors_fn, heuristic_fn):
+    current_state = start_state
+    while current_state != goal_state:
+        neighbors = get_neighbors_fn(current_state)
+        neighbor_states = [(neighbor, heuristic_fn(neighbor)) for neighbor in neighbors]
+        best_neighbor, best_neighbor_score = min(neighbor_states, key=lambda x: x[1])
+        if best_neighbor_score < heuristic_fn(current_state):
+            current_state = best_neighbor
+        else:
+            break
+    return current_state
+
+# Example usage:
+# Define the start and goal states
+start_state = [0, 0]
+goal_state = [10, 10]
+
+# Define the function that generates neighboring states
+def get_neighbors(state):
+    x, y = state
+    neighbors = []
+    for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+        neighbor = [x + dx, y + dy]
+        if 0 <= neighbor[0] <= 10 and 0 <= neighbor[1] <= 10:
+            neighbors.append(neighbor)
+    return neighbors
+
+# Define the heuristic function
+def heuristic(state):
+    x, y = state
+    return abs(x - goal_state[0]) + abs(y - goal_state[1])
+
+# Run the hill-climbing algorithm
+solution = hill_climbing(start_state, goal_state, get_neighbors, heuristic)
+print("Found solution:", solution)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![Screenshot (254)](https://user-images.githubusercontent.com/68440833/221955560-86420fcb-ec90-49ab-84ff-1d6da9ad5ecb.png)
 
 
