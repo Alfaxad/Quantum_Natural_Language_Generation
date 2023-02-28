@@ -60,52 +60,6 @@ One of the key advantages of DQT is that it provides a way to simplify complex q
 ![Screenshot (253)](https://user-images.githubusercontent.com/68440833/221954392-cb494e25-c732-47c3-bb2f-dabd2578a7e5.png)
 
 
-**Hill-climbing algorithm**
-```python import random
-
-def hill_climbing(start_state, goal_state, get_neighbors_fn, heuristic_fn):
-    current_state = start_state
-    while current_state != goal_state:
-        neighbors = get_neighbors_fn(current_state)
-        neighbor_states = [(neighbor, heuristic_fn(neighbor)) for neighbor in neighbors]
-        best_neighbor, best_neighbor_score = min(neighbor_states, key=lambda x: x[1])
-        if best_neighbor_score < heuristic_fn(current_state):
-            current_state = best_neighbor
-        else:
-            break
-    return current_state
-
-# Example usage:
-# Define the start and goal states
-start_state = [0, 0]
-goal_state = [10, 10]
-
-# Define the function that generates neighboring states
-def get_neighbors(state):
-    x, y = state
-    neighbors = []
-    for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
-        neighbor = [x + dx, y + dy]
-        if 0 <= neighbor[0] <= 10 and 0 <= neighbor[1] <= 10:
-            neighbors.append(neighbor)
-    return neighbors
-
-# Define the heuristic function
-def heuristic(state):
-    x, y = state
-    return abs(x - goal_state[0]) + abs(y - goal_state[1])
-
-# Run the hill-climbing algorithm
-solution = hill_climbing(start_state, goal_state, get_neighbors, heuristic)
-print("Found solution:", solution)
-
-```
-
-
-
-
-
-
 
 
 
@@ -185,12 +139,128 @@ https://user-images.githubusercontent.com/68440833/221959527-5e97585a-7c89-4787-
 
 
 
+**Hill-climbing algorithm**
+```python import random
+
+def hill_climbing(start_state, goal_state, get_neighbors_fn, heuristic_fn):
+    current_state = start_state
+    while current_state != goal_state:
+        neighbors = get_neighbors_fn(current_state)
+        neighbor_states = [(neighbor, heuristic_fn(neighbor)) for neighbor in neighbors]
+        best_neighbor, best_neighbor_score = min(neighbor_states, key=lambda x: x[1])
+        if best_neighbor_score < heuristic_fn(current_state):
+            current_state = best_neighbor
+        else:
+            break
+    return current_state
+
+# Example usage:
+# Define the start and goal states
+start_state = [0, 0]
+goal_state = [10, 10]
+
+# Define the function that generates neighboring states
+def get_neighbors(state):
+    x, y = state
+    neighbors = []
+    for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+        neighbor = [x + dx, y + dy]
+        if 0 <= neighbor[0] <= 10 and 0 <= neighbor[1] <= 10:
+            neighbors.append(neighbor)
+    return neighbors
+
+# Define the heuristic function
+def heuristic(state):
+    x, y = state
+    return abs(x - goal_state[0]) + abs(y - goal_state[1])
+
+# Run the hill-climbing algorithm
+solution = hill_climbing(start_state, goal_state, get_neighbors, heuristic)
+print("Found solution:", solution)
+
+```
+
+
+
+### Simulated Annealing Algorithm
+is a probabilistic technique for approximating the global optimum of a given function. Specifically, it is a metaheuristic to approximate global optimization in a large search space for an optimization problem. It is often used when the search space is discrete (for example the traveling salesman problem, the boolean satisfiability problem, protein structure prediction, and job-shop scheduling). For problems where finding an approximate global optimum is more important than finding a precise local optimum in a fixed amount of time, simulated annealing may be preferable to exact algorithms such as gradient descent or branch and bound.
+
+The name of the algorithm comes from annealing in metallurgy, a technique involving heating and controlled cooling of a material to alter its physical properties. Both are attributes of the material that depend on their thermodynamic free energy. Heating and cooling the material affects both the temperature and the thermodynamic free energy or Gibbs energy. Simulated annealing can be used for very hard computational optimization problems where exact algorithms fail; even though it usually achieves an approximate solution to the global minimum, it could be enough for many practical problems.
 
 
 
 
 
+
+**Simulated annealing visualization**
 https://user-images.githubusercontent.com/68440833/221959889-6fb3e23c-39a6-455d-9679-4b6d6e8335cf.mp4
+
+
+**Simulated Annealing implementation**
+```python
+import math
+import random
+
+def simulated_annealing(initial_solution, objective_function, T0, Tf, cooling_rate):
+    current_solution = initial_solution
+    current_energy = objective_function(current_solution)
+    T = T0
+    while T > Tf:
+        # Generate a new candidate solution
+        candidate_solution = generate_neighbor(current_solution)
+        # Evaluate the candidate solution
+        candidate_energy = objective_function(candidate_solution)
+        # Calculate the energy difference
+        delta_E = candidate_energy - current_energy
+        # If the candidate solution is better, accept it
+        if delta_E < 0:
+            current_solution = candidate_solution
+            current_energy = candidate_energy
+        # If the candidate solution is worse, accept it with a certain probability
+        else:
+            acceptance_probability = math.exp(-delta_E / T)
+            if random.random() < acceptance_probability:
+                current_solution = candidate_solution
+                current_energy = candidate_energy
+        # Decrease the temperature
+        T *= cooling_rate
+    return current_solution, current_energy
+
+def generate_neighbor(solution):
+    # Generate a random neighbor by making small changes to the solution
+    # For example, swap two randomly selected elements in a list
+    neighbor = list(solution)
+    i, j = random.sample(range(len(solution)), 2)
+    neighbor[i], neighbor[j] = neighbor[j], neighbor[i]
+    return neighbor
+
+# Example usage: solve the traveling salesman problem
+# Define the objective function as the total distance traveled
+def objective_function(solution):
+    # Assume that the solution is a list of city indices
+    total_distance = 0
+    for i in range(len(solution)):
+        j = (i + 1) % len(solution)
+        distance = get_distance(solution[i], solution[j])
+        total_distance += distance
+    return total_distance
+
+# Define the initial solution as a random permutation of city indices
+cities = [0, 1, 2, 3, 4]
+initial_solution = random.sample(cities, len(cities))
+
+# Set the initial and final temperatures, and the cooling rate
+T0 = 100
+Tf = 1
+cooling_rate = 0.99
+
+# Run the Simulated Annealing algorithm
+solution, energy = simulated_annealing(initial_solution, objective_function, T0, Tf, cooling_rate)
+
+print("Final solution:", solution)
+print("Final energy:", energy)
+
+```
 
 
 
