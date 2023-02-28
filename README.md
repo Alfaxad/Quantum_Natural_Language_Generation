@@ -7,7 +7,7 @@
 </p>
 
 
-# QUANTUM NATURAL LANGUAGE GENERATION
+# QUANTUM NATURAL LANGUAGE  GENERATION & SENTENCE GENERATION
 
 ## TEAM : QHAQER
 
@@ -262,6 +262,15 @@ print("Final energy:", energy)
 
 ```
 
+
+
+## CONCLUSION & FUTURE PROJECTIONS.
+
+In this open-hackathon Project I have successfully implemented a Quantum Machine Learning Model that can classify and generate sentences  and be able to classify sentences according to the paper **Quantum Natural Language Generation on Near-Term Devices(https://arxiv.org/pdf/2211.00727.pdf)**
+
+- My main motivation came from the sudden popularity and convenience of Large Language Models that has led to impressive Generative AI such as Open AI's ChatGPT Dall-E, and Google's Imagen. As an inspiration I wanted to implented a Quantum Text2Image model, however the computational complexity, current state of Quantum computers and the duration of the hackathon did not give room for this.
+
+- I am glad I got to implement this instead, but **I am even more optimistic of the future of Quantum computing**. My next goal is implementing a Text2Image model that can run on a Quantum Computer and I cannot wait to see the unfolding potential of AI and Quantum Computing. **What A Time To Be Alive**
 
 
 
