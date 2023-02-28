@@ -113,9 +113,11 @@ diagram, as well as a set of quantum logic
 gates to each word in the diagram.
 
 4. The quantum compiler t|keti (Sivarajah et al.,
-2020) is used to translate the parameterised
-quantum circuit into machine-specific instructions, which can be executed on real IBM
-quantum computers or simulators
+2020) is used to translate the parameterised quantum circuit into machine-specific instructions, which can be executed on real IBM quantum computers or simulators
+
+
+
+The algorithm for natural language generation was **Simulated Quantum Annealing** which is an optimization algorithm built on top of **Hill-Climbing Algorithm**
 
 
 
@@ -131,7 +133,6 @@ quantum computers or simulators
 
 
 
-I
 
 
 
