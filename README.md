@@ -44,10 +44,24 @@ Our algorithm is based on the well-known simulated annealing technique for combi
 optimisation. An implementation is provided
 and used to demonstrate successful sentence
 generation on both simulated and real quantum
-hardware. A variant of our algorithm can also
+hardware. A variant of the algorithm can also
 be used for music generation.
-This paper aims to be self-contained, introducing all the necessary background on NLP and
+ThE paper also aimed to be self-contained, introducing all the necessary background on NLP and
 quantum computing along the way
+
+
+
+
+## Some  Background on QNLP
+The current state of QNLP has by large extent been developed on **Diagramatic Quantum Theory**, Diagrammatic Quantum Theory (DQT) is a mathematical framework for understanding and calculating quantum systems using diagrams as a visual representation
+
+One of the key advantages of DQT is that it provides a way to simplify complex quantum staes, especially sequential ones such as language. Specifically, String diagrams provides a way to express nonseparable and separable processes in a diagrammatic fashion as seen in the diagram below.
+
+![Screenshot (253)](https://user-images.githubusercontent.com/68440833/221954392-cb494e25-c732-47c3-bb2f-dabd2578a7e5.png)
+
+![Screenshot (254)](https://user-images.githubusercontent.com/68440833/221955560-86420fcb-ec90-49ab-84ff-1d6da9ad5ecb.png)
+
+
 
 
 
