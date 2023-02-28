@@ -61,8 +61,7 @@ One of the key advantages of DQT is that it provides a way to simplify complex q
 
 
 **Hill-climbing algorithm**
-```python 
-    import random
+```python import random
 
 def hill_climbing(start_state, goal_state, get_neighbors_fn, heuristic_fn):
     current_state = start_state
@@ -252,8 +251,7 @@ https://user-images.githubusercontent.com/68440833/221959889-6fb3e23c-39a6-455d-
 
 
 
-g
-[
+
 
 
 
