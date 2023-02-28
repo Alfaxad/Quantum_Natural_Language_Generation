@@ -62,6 +62,63 @@ One of the key advantages of DQT is that it provides a way to simplify complex q
 ![Screenshot (254)](https://user-images.githubusercontent.com/68440833/221955560-86420fcb-ec90-49ab-84ff-1d6da9ad5ecb.png)
 
 
+### 2.2 DisCoCat and QNLP
+The Distributional Compositional Categorical (DisCoCat) model of language meaning (Coecke et al.,
+2010) is a mathematical framework that allows for
+the meaning of a sentence to be described as a combination of the meaning of its constituent words,
+and the grammatical relationships between these
+words. This is in contrast to many older NLP models, which treat sentences as “bags of words” while
+ignoring their grammatical structure.
+DisCoCat comes equipped with a pictorial representation, allowing any sentence to be represented
+by a so-called string diagram. Such a diagram
+consists of boxes representing words, and wires
+connecting these boxes according to the formalism of pregroup grammars (Lambek, 2008). This
+means that every wire in the diagram is annotated
+either by some atomic type p, a left adjoint p.l, or
+a right adjoint p.r. Let us explain the role of types
+and adjoints through example, by considering the
+sentence “Alice generates language“. The DisCoCat diagram corresponding to this sentence is given
+in figure below:
+![Screenshot (255)](https://user-images.githubusercontent.com/68440833/221956980-e20a3baf-0438-45d0-8241-a1af2afabec1.png)
+
+It is worth noting that DisCoCat diagrams are
+more than simple pictures. They are based on the
+rigorous formalism of monoidal categories (Heunen and Vicary, 2019, Chapter 1), which means
+they are equipped with a diagrammatic calculus.
+This calculus can be used to rewrite complicated string diagrams into simpler ones that still encode
+the meaning of the original sentence.
+
+
+
+
+## General Steps of the algorithm Using Lambeq Framework
+
+
+
+1. A sentence is converted to a DisCoCat diagram using the Combinatory Categorical
+Grammar (CCG) based techniques of Yeung
+and Kartsaklis (2021).
+
+2. The DisCoCat diagram is simplified using
+some of the rewrite rules available in lambeq. Even though this step is strictly speaking
+optional, applying rewrite rules often leads to
+crucial computational advantages, for instance
+by reducing the number of qubits required to
+implement the parameterised quantum circuit.
+
+3. An ansatz is used to transform the simplified
+diagram to a parameterised quantum circuit.
+This ansatz is a mapping that assigns a number of qubits to each wire type in the string
+diagram, as well as a set of quantum logic
+gates to each word in the diagram.
+
+4. The quantum compiler t|keti (Sivarajah et al.,
+2020) is used to translate the parameterised
+quantum circuit into machine-specific instructions, which can be executed on real IBM
+quantum computers or simulators
+
+
+
 
 
 
