@@ -279,8 +279,7 @@ In this open-hackathon Project I have successfully implemented a Quantum Machine
 ## REFERENCES
 
 1. Quantum Natural Language Generation on Near-Term Devices: https://arxiv.org/pdf/2211.00727.pdf
-2.Bob Coecke, “Foundations for Near Term Quantum Natural
-Language Processing”, https://arxiv.org/abs/2012.03755
+2.Bob Coecke, “Foundations for Near Term Quantum Natural Language Processing”, https://arxiv.org/abs/2012.03755
 3. Stephen Clark, “Something Old, Something New: Grammarbased CCG Parsing with Transformer Models”,
 https://arxiv.org/abs/2109.10044
 4.Imagen unprecedented photorealism × deep level of language understanding: https://imagen.research.google/
